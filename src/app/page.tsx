@@ -1,15 +1,15 @@
-import Main from "@/components/production";
-import SideBar from "@/components/sideBar";
+import { redirect } from "next/navigation";
+
 
 export const metadata = {
-  title: "Ensacado",
+  title: "null",
   description: "sistema de produção",
 };
 export default function Home() {
-  return (
-    <div className="h-[97vh] flex">
-      <SideBar />
-      <Main />
-    </div>
-  );
+
+  const Production = true;
+
+  if(Production) redirect('/bagged/production')
+
+  return <> olá </>;
 }
