@@ -5,26 +5,27 @@ import { useState } from "react";
 
 export default function SideBar() {
   const [sideBar, setSideBar] = useState(true);
+  const environments = [{name:"Dados",reference: "#"},{name:"Produção",reference: "#"}]
   return (
     <>
       <div
         onClick={() => setSideBar(!sideBar)}
-        className={`ml-4 group flex flex-col items-center  drop-shadow-lg fixed left-0 ${
-          sideBar ? "left-44" : "top-4"
+        className={`ml-4 group flex flex-col items-center  drop-shadow-lg fixed left-0 rounded-full ${
+          sideBar ? "left-44 top-6" : "top-8 left-[1.2rem]"
         } duration-300`}
       >
-        <button className="flex items-center rounded-b-md group-nav bg-lime-400 font-semibold text-blue-800">
+        <button className="flex items-center bg-lime-400 font-semibold text-blue-800">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
             viewBox="0 0 24 24"
-            stroke-width="1.5"
+            strokeWidth="1.5"
             stroke="currentColor"
             className={`w-6 h-6 m-2 ${sideBar && "rotate-180"}`}
           >
             <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
+              strokeLinecap="round"
+              strokeLinejoin="round"
               d="M3 4.5h14.25M3 9h9.75M3 13.5h9.75m4.5-4.5v12m0 0l-3.75-3.75M17.25 21L21 17.25"
             />
           </svg>
@@ -44,20 +45,21 @@ export default function SideBar() {
             alt="Picture of the author"
           />
         </div>
-        <nav className="h-[80vh] gap-2">
-          <a
-            href="#"
-            className="ml-4 group flex flex-col items-center  drop-shadow-lg"
+        <nav className="h-[80vh] space-y-3">
+          {environments.map((e) => (<a
+            key={e.name}
+            href={e.reference}
+            className="ml-4 flex flex-col items-center  shadow-md shadow-lime-400"
           >
-            <button className="w-full h-12 flex items-center rounded-l-md group-nav bg-lime-400 font-semibold text-blue-800">
-              <span className="pl-4">Produção</span>
+            <button className="w-full py-4 flex items-center rounded-l-md font-semibold text-blue-800 hover:bg-lime-400" >
+              <span className="pl-4">{e.name}</span>
             </button>
-          </a>
+          </a>))}
         </nav>
         <div className="flex flex-col">
           <a href="#" className="ml-4 group flex flex-col items-center">
             <div className="w-52 border-solid border-t border-zinc-300"></div>
-            <button className="w-full h-12 flex items-center rounded-l-md group-nav">
+            <button className="w-full h-12 flex items-center rounded-l-md">
               <span className="pl-4">Sair</span>
             </button>
             <div className="w-52 border-solid border-t border-zinc-300"></div>
