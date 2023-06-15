@@ -1,6 +1,6 @@
 export default function ProductionQuantity(){
     return (
-        <div className="flex flex-col gap-2 min-w-[375px]">
+        <div className="flex flex-col gap-2 min-w-[300px]">
           <span className="">Quantidade</span>
           <input
             type="number"

@@ -1,4 +1,4 @@
-'use client'
+"use client";
 
 export default function ButtonsAction({
   startShift,
@@ -7,20 +7,23 @@ export default function ButtonsAction({
   setStopShift,
   finishShift,
   setFinishShift,
+  chooseTeam,
   setChooseTeam,
-  setItemSelected
+  itemSelected,
+  setItemSelected,
 }: any) {
   function startAction() {
+    if (chooseTeam === "" || itemSelected === "") return ;
     setStartShift(true);
   }
   function stopAction() {
     setStopShift(!stopShift);
   }
   function finishAction() {
-    if(!finishShift)setFinishShift(true);
-    if(finishShift) {
-      setChooseTeam('');
-      setItemSelected('');
+    if (!finishShift) setFinishShift(true);
+    if (finishShift) {
+      setChooseTeam("");
+      setItemSelected("");
       setStartShift(false);
       setStopShift(false);
       setFinishShift(false);
@@ -30,7 +33,7 @@ export default function ButtonsAction({
     setFinishShift(false);
   }
   return (
-    <div className="flex gap-5 items-center ml-6 p-4">
+    <div className="flex justify-around items-center p-4 min-w-[20rem]">
       {!startShift ? (
         <button
           onClick={startAction}

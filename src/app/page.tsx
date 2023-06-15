@@ -1,15 +1,10 @@
-import { redirect } from "next/navigation";
+"use client";
+//import { redirect } from "next/navigation";
 
-
-export const metadata = {
-  title: "null",
-  description: "sistema de produção",
-};
 export default function Home() {
-
-  const Production = true;
-
-  if(Production) redirect('/bagged/production')
-
-  return <> olá </>;
+  return (
+    <>
+      por favor habra o menu no canto superior esquerdo e selecione o ambiente
+    </>
+  );
 }

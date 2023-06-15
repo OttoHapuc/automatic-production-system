@@ -4,7 +4,7 @@ import ProductionQuantity from "../utils/productionQuantity";
 
 export default function ShiftWithStop({ finishShift }: any) {
   return (
-      <div className="py-2 flex-1 min-w-[375px] space-y-4">
+      <div className="py-2 flex-1 min-w-[300px] space-y-2">
         <div className="flex flex-col gap-2">
           <span className="">Equipe I</span>
           <input

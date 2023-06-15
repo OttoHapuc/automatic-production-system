@@ -10,8 +10,21 @@
 	transition: 0.2s;
 }
 
+.transition-size_toast{
+	transition: width 2s ease-in-out, height 0.3s ease-in-out;
+  }
+
 @tailwind components;
 @tailwind utilities;
+
+::-webkit-scrollbar {
+	width: 0;
+ }
+
+::-webkit-scrollbar-thumb {
+  background: #47e147;
+  border-radius: 25px;
+}
 
 *{
     box-sizing: border-box;
