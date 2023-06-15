@@ -2,7 +2,11 @@
 
 import ProductionQuantity from "../utils/productionQuantity";
 
-export default function Non_StopShift({ finishShift, chooseTeam, itemSelected }: any) {
+export default function Non_StopShift({
+  finishShift,
+  chooseTeam,
+  itemSelected,
+}: any) {
   return (
     <div className="space-y-2 pb-2">
       <div className="flex-1 min-w-[300px]">

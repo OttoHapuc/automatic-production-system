@@ -3,7 +3,7 @@ import { useState } from "react";
 import ButtonsAction from "./buttons";
 import Sessions from "./sessions";
 
-export default function Machine({machine}:any) {
+export default function Machine({ machine }: any) {
   const [startShift, setStartShift] = useState(false);
   const [stopShift, setStopShift] = useState(false);
   const [finishShift, setFinishShift] = useState(false);

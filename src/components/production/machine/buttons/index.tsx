@@ -13,7 +13,7 @@ export default function ButtonsAction({
   setItemSelected,
 }: any) {
   function startAction() {
-    if (chooseTeam === "" || itemSelected === "") return ;
+    if (chooseTeam === "" || itemSelected === "") return;
     setStartShift(true);
   }
   function stopAction() {
