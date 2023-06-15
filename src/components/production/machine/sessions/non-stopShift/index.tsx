@@ -2,16 +2,20 @@
 
 import ProductionQuantity from "../utils/productionQuantity";
 
-export default function Non_StopShift({ finishShift }: any) {
+export default function Non_StopShift({
+  finishShift,
+  chooseTeam,
+  itemSelected,
+}: any) {
   return (
-    <>
-      <div className="space-y-2 py-2 flex-1 min-w-[374px]">
+    <div className="space-y-2 pb-2">
+      <div className="flex-1 min-w-[300px]">
         <div className="flex flex-col gap-2">
-          <span className="">Equipe I</span>
-          <span className="">Item: I00345 - Areia média 20 kg</span>
+          <span className="">{chooseTeam}</span>
+          <span className="">{itemSelected}</span>
         </div>
       </div>
       {finishShift && <ProductionQuantity />}
-    </>
+    </div>
   );
 }

@@ -2,15 +2,21 @@
 import Image from "next/image";
 import LogoAB from "../../../public/grupoabareias.png";
 import { useState } from "react";
+import Link from "next/link";
 
 export default function SideBar() {
-  const [sideBar, setSideBar] = useState(true);
-  const environments = [{name:"Dados",reference: "#"},{name:"Produção",reference: "#"}]
+  const [sideBar, setSideBar] = useState(false);
+  const environments = [
+    { name: "Controle", reference: "/bagged/baggedData" },
+    { name: "Produção", reference: "/bagged/production" },
+  ];
   return (
-    <>
+    <div
+      className={`${sideBar && "backdrop-blur w-full"} absolute transition-all`}
+    >
       <div
         onClick={() => setSideBar(!sideBar)}
-        className={`ml-4 group flex flex-col items-center  drop-shadow-lg fixed left-0 rounded-full ${
+        className={`ml-4 group flex flex-col items-center drop-shadow-lg fixed left-0 rounded-full ${
           sideBar ? "left-44 top-6" : "top-8 left-[1.2rem]"
         } duration-300`}
       >
@@ -32,9 +38,9 @@ export default function SideBar() {
         </button>
       </div>
       <aside
-        className={`h-[97vh] transition-all duration-300 ${
+        className={`h-[97vh] duration-300 ${
           sideBar ? "w-72" : "w-0"
-        } bg-white rounded-l-md flex flex-col justify-between pt-2 pb-7 shadow-inner shadow-lime-300`}
+        } bg-white rounded-l-md flex flex-col justify-between pt-2 pb-7 shadow-md shadow-lime-400`}
       >
         <div>
           <Image
@@ -45,16 +51,19 @@ export default function SideBar() {
             alt="Picture of the author"
           />
         </div>
-        <nav className="h-[80vh] space-y-3">
-          {environments.map((e) => (<a
-            key={e.name}
-            href={e.reference}
-            className="ml-4 flex flex-col items-center  shadow-md shadow-lime-400"
-          >
-            <button className="w-full py-4 flex items-center rounded-l-md font-semibold text-blue-800 hover:bg-lime-400" >
-              <span className="pl-4">{e.name}</span>
-            </button>
-          </a>))}
+        <nav className="h-[80vh] space-y-3 pt-6">
+          {environments.map((e) => (
+            <Link
+              onClick={() => setSideBar(!sideBar)}
+              key={e.name}
+              href={e.reference}
+              className="ml-4 flex flex-col items-center  shadow-md shadow-lime-400"
+            >
+              <button className="w-full py-4 flex items-center rounded-l-md font-semibold text-blue-800 hover:bg-lime-400">
+                <span className="pl-4">{e.name}</span>
+              </button>
+            </Link>
+          ))}
         </nav>
         <div className="flex flex-col">
           <a href="#" className="ml-4 group flex flex-col items-center">
@@ -67,6 +76,6 @@ export default function SideBar() {
           <div></div>
         </div>
       </aside>
-    </>
+    </div>
   );
 }
