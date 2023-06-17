@@ -1,5 +1,9 @@
-"use client";
 //import { redirect } from "next/navigation";
+
+export const metadata = {
+  title: "DashBoard",
+  description: "Sessão inicial",
+};
 
 export default function Home() {
   return (
