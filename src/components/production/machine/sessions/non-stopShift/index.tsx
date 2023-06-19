@@ -6,6 +6,8 @@ export default function Non_StopShift({
   finishShift,
   chooseTeam,
   itemSelected,
+  quantityProduced,
+  setQuantityProduced
 }: any) {
   return (
     <div className="space-y-2 pb-2">
@@ -15,7 +17,12 @@ export default function Non_StopShift({
           <span className="">{itemSelected}</span>
         </div>
       </div>
-      {finishShift && <ProductionQuantity />}
+      {finishShift && (
+        <ProductionQuantity
+          quantityProduced={quantityProduced}
+          setQuantityProduced={setQuantityProduced}
+        />
+      )}
     </div>
   );
 }

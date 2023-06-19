@@ -1,5 +1,7 @@
 "use client";
 
+import { toast } from "react-toastify";
+
 export default function ButtonsAction({
   startShift,
   setStartShift,
@@ -11,23 +13,33 @@ export default function ButtonsAction({
   setChooseTeam,
   itemSelected,
   setItemSelected,
+  reasonForTheStop,
+  setReasonForTheStop,
+  quantityProduced,
+  setQuantityProduced,
 }: any) {
   function startAction() {
-    if (chooseTeam === "" || itemSelected === "") return;
+    if (chooseTeam === "")
+      return toast.error("Selecione uma turma");
+    if (itemSelected === "")
+      return toast.error("Selecione um Item de produção");
     setStartShift(true);
   }
   function stopAction() {
+    if (stopShift && reasonForTheStop === "")
+      return toast.error("Preencha o motivo da parada");
     setStopShift(!stopShift);
   }
   function finishAction() {
     if (!finishShift) setFinishShift(true);
-    if (finishShift) {
-      setChooseTeam("");
-      setItemSelected("");
-      setStartShift(false);
-      setStopShift(false);
-      setFinishShift(false);
-    }
+    if(finishShift && quantityProduced === "") return toast.error("Preencha a quantidade produzida")
+    setChooseTeam("");
+    setItemSelected("");
+    setStartShift(false);
+    setStopShift(false);
+    setFinishShift(false);
+    setReasonForTheStop("");
+    setQuantityProduced("");
   }
   function cancelEndOfShift() {
     setFinishShift(false);
