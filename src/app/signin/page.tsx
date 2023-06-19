@@ -8,23 +8,25 @@ export default function SignIn() {
   const handleSubmit = (event: React.FormEvent) => {
     event.preventDefault();
     if (email === "" || password === "") {
-      return toast.error("Preencha os campos devidamente", {
-        position: "top-right",
-        autoClose: 5000,
-        hideProgressBar: false,
-        closeOnClick: true,
-        pauseOnHover: true,
-        draggable: true,
-        progress: undefined,
-        theme: "colored",
-      });
+      return toast.error("Preencha os campos devidamente");
     }
     setEmail("");
     setPassword("");
   };
   return (
     <div className="image-login h-full w-full flex items-center justify-center shadow-inner shadow-amber-800">
-      <ToastContainer />
+      <ToastContainer
+        position="top-right"
+        autoClose={5000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        theme="colored"
+      />
       <div className="max-w-xs p-2 bg-white rounded-xl shadow-amber-800 shadow-md">
         <h1 className="-mb-10 text-3xl">Login</h1>
         <img

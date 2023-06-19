@@ -12,14 +12,26 @@ export default function Sessions({
   itemSelected,
   setItemSelected,
   machine,
+  reasonForTheStop,
+  setReasonForTheStop,
+  quantityProduced,
+  setQuantityProduced
 }: any) {
   const whenShiftStarted = stopShift ? (
-    <ShiftWithStop finishShift={finishShift} />
+    <ShiftWithStop
+      finishShift={finishShift}
+      reasonForTheStop={reasonForTheStop}
+      setReasonForTheStop={setReasonForTheStop}
+      quantityProduced={quantityProduced}
+      setQuantityProduced={setQuantityProduced}
+    />
   ) : (
     <Non_StopShift
       finishShift={finishShift}
       chooseTeam={chooseTeam}
       itemSelected={itemSelected}
+      quantityProduced={quantityProduced}
+      setQuantityProduced={setQuantityProduced}
     />
   );
   return (
