@@ -1,13 +1,20 @@
 @tailwind base;
 
 .button-click:active {
-  box-shadow: 0 0 0 rgba(0, 0, 0, 0.8), inset 2px 2px 2px rgba(0, 0, 0, 0.8);
+  box-shadow: 0 0 0 rgba(0, 0, 0, 0.8), inset 0 2px 2px rgba(0, 0, 0, 0.439);
   transform: translate(2px, 2px);
 }
 .buttons {
-  text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);
-  box-shadow: 2px 2px 0 1px rgba(0, 0, 0, 0.6);
+  text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.335);
+  box-shadow: 0 2px 0 1px rgba(0, 0, 0, 0.35);
   transition: 0.2s;
+}
+
+.image-login {
+  background-image: url("https://img.freepik.com/vetores-gratis/fundo-horizontal-de-construcao-com-caminhao-de-concreto-e-escavadeira-perto-de-ilustracao-plana-de-casa-inacabada_1284-29079.jpg?w=1480&t=st=1687174250~exp=1687174850~hmac=b48e200edc81f4de74f6835ee025b23f8d7e043a49e7ec266e5cc0bda73ed797");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
 @tailwind components;

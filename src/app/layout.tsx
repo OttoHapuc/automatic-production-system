@@ -15,7 +15,7 @@ export default function RootLayout({
             <div className="h-[97vh] flex relative">
               <SideBar />
               <main className="bg-lime-400 w-full rounded-r-md flex justify-center items-center">
-                <div className="w-[98%] h-[94vh] flex items-center justify-center bg-white rounded-md py-4 shadow-inner shadow-lime-600">
+                <div className="w-[98%] h-[94vh] flex items-center justify-center bg-white rounded-md shadow-inner shadow-lime-600">
                   {children}
                 </div>
               </main>
