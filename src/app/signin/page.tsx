@@ -1,17 +1,30 @@
-'use client'
+"use client";
 import { useState } from "react";
+import { ToastContainer, toast } from "react-toastify";
 
 export default function SignIn() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const handleSubmit = (event: React.FormEvent) => {
     event.preventDefault();
-    if (email === "" || password === "") return;
+    if (email === "" || password === "") {
+      return toast.error("Preencha os campos devidamente", {
+        position: "top-right",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "colored",
+      });
+    }
     setEmail("");
     setPassword("");
   };
   return (
     <div className="image-login h-full w-full flex items-center justify-center shadow-inner shadow-amber-800">
+      <ToastContainer />
       <div className="max-w-xs p-2 bg-white rounded-xl shadow-amber-800 shadow-md">
         <h1 className="-mb-10 text-3xl">Login</h1>
         <img
