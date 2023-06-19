@@ -1,18 +1,27 @@
 "use client";
+import { useRouter } from "next/navigation";
 import { useState } from "react";
 import { ToastContainer, toast } from "react-toastify";
 
 export default function SignIn() {
+  const router = useRouter()
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+
   const handleSubmit = (event: React.FormEvent) => {
     event.preventDefault();
+
     if (email === "" || password === "") {
-      return toast.error("Preencha os campos devidamente");
+      toast.error("Preencha os campos devidamente");
+      return;
     }
+
     setEmail("");
     setPassword("");
+    router.push("/");
   };
+
+
   return (
     <div className="image-login h-full w-full flex items-center justify-center shadow-inner shadow-amber-800">
       <ToastContainer
