@@ -21,7 +21,7 @@ export default function Production() {
     },
   ];
   return (
-    <div className="h-full w-full flex flex-wrap gap-3 justify-center overflow-auto">
+    <div className="h-full w-full py-4 flex flex-wrap gap-3 justify-center overflow-auto">
       {machines.map((e) => (
         <Machine key={e.name} machine={e} />
       ))}
