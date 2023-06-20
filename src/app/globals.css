@@ -21,12 +21,12 @@
 @tailwind utilities;
 
 ::-webkit-scrollbar {
-  width: 0;
+  width: 2px;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #47e147;
-  border-radius: 25px;
+  background: #374137;
+  border-radius: 50%;
 }
 
 * {

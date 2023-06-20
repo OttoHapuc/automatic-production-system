@@ -7,6 +7,8 @@ import Link from "next/link";
 export default function SideBar() {
   const [sideBar, setSideBar] = useState(false);
   const environments = [
+    { name: "Login", reference: "/signin" },
+    { name: "RH", reference: "/rh" },
     { name: "Controle", reference: "/bagged/baggedData" },
     { name: "Produção", reference: "/bagged/production" },
   ];
