@@ -1,0 +1,77 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id        Int      @id @default(autoincrement())
+  email     String   @unique @db.VarChar(255)
+  password  String   @db.VarChar(255)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  Shift     Shift[]
+}
+
+model Machine {
+  id    Int     @id @default(autoincrement())
+  name  String  @unique @db.VarChar(255)
+  Shift Shift[]
+}
+
+model Item {
+  id     Int     @id @default(autoincrement())
+  name   String  @unique @db.VarChar(255)
+  active String  @db.Char(50)
+  Shift  Shift[]
+}
+
+model Shift {
+  id             Int              @id @default(autoincrement())
+  user_id        Int              @db.Integer
+  User           User             @relation(fields: [user_id], references: [id], onDelete: Cascade)
+  machine_id     Int              @db.Integer
+  Machine        Machine          @relation(fields: [machine_id], references: [id], onDelete: Cascade)
+  item_id        Int              @db.Integer
+  Item           Item             @relation(fields: [item_id], references: [id], onDelete: Cascade)
+  status         String           @db.Text
+  createdAt      DateTime         @default(now())
+  Start_of_shift Start_of_shift[]
+  End_of_shift   End_of_shift[]
+  Start_of_stop  Start_of_stop[]
+  End_of_stop    End_of_stop[]
+}
+
+model Start_of_shift {
+  id       Int      @id @default(autoincrement())
+  start    DateTime @default(now())
+  shift_id Int      @db.Integer
+  Shift    Shift    @relation(fields: [shift_id], references: [id], onDelete: Cascade)
+}
+
+model End_of_shift {
+  id       Int      @id @default(autoincrement())
+  closure  DateTime @default(now())
+  shift_id Int      @db.Integer
+  Shift    Shift    @relation(fields: [shift_id], references: [id], onDelete: Cascade)
+}
+
+model Start_of_stop {
+  id       Int      @id @default(autoincrement())
+  start    DateTime @default(now())
+  shift_id Int      @db.Integer
+  Shift    Shift    @relation(fields: [shift_id], references: [id], onDelete: Cascade)
+}
+
+model End_of_stop {
+  id       Int      @id @default(autoincrement())
+  closure  DateTime @default(now())
+  shift_id Int      @db.Integer
+  Shift    Shift    @relation(fields: [shift_id], references: [id], onDelete: Cascade)
+}
