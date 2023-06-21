@@ -1,4 +1,5 @@
 import GenericError from "@/server/error";
+import jwt from 'jsonwebtoken'
 
 type Body = {
   email: string;
@@ -11,9 +12,9 @@ function Login(body: Body) {
   else if (email === "" || password === "")
     throw GenericError("incorrectly filled fields", 400);
 
-  //  const token = jwt.sign(user_id, process.env.JWT_SECRET)
+  const token = jwt.sign({email}, process.env.JWT_SECRET)
   //create session in db
-  //  return token
+  return token
 }
 
 export default {
