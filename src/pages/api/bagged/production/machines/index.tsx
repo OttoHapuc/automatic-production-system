@@ -6,7 +6,7 @@ export default async function Machines(
   req: NextApiRequest,
   res: NextApiResponse
 ) {
-  const { headers, body } = req;
+  const { headers } = req;
   const { authorization } = headers;
   const token = authorization?.split(" ")[1];
   try {
