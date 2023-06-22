@@ -1,12 +1,12 @@
 import BestCandidates from "@/components/rh/bestCandidates";
 import BarChart from "@/components/rh/charts/bar";
 import DoughnutChart from "@/components/rh/charts/doughnutChart";
-import SideBar from "@/components/rh/sideBar";
+import VacancyArea from "@/components/rh/vacancyArea";
 
 export default function RH() {
   return (
     <div className="flex w-full h-full p-4 space-x-2">
-      <SideBar />
+      <VacancyArea />
 
       <div className="sm:w-4/5 sm:h-full flex flex-col justify-around items-center p-4">
         <div className="w-full flex flex-wrap sm:h-2/5 justify-around items-center p-2">
