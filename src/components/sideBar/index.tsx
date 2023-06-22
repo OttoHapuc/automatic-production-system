@@ -45,13 +45,15 @@ export default function SideBar() {
         } bg-white rounded-l-md flex flex-col justify-between pt-2 pb-7 shadow-md shadow-lime-400`}
       >
         <div>
-          <Image
-            src={LogoAB}
-            width={150}
-            height={150}
-            className="ml-4"
-            alt="Picture of the author"
-          />
+          <Link href="/" onClick={() => setSideBar(!sideBar)}>
+            <Image
+              src={LogoAB}
+              width={150}
+              height={150}
+              className="ml-4"
+              alt="Picture of the author"
+            />
+          </Link>
         </div>
         <nav className="h-[80vh] space-y-3 pt-6">
           {environments.map((e) => (
