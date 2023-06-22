@@ -1,5 +1,5 @@
 import GenericError, { ErrorResponse } from "../error";
-import jwt from 'jsonwebtoken'
+import jwt from "jsonwebtoken";
 //import { prisma } from "../config/dataBase";
 type JWTPayload = {
   email: string;
@@ -8,7 +8,11 @@ type JWTPayload = {
 export default async function authorizationToken(token?: string) {
   if (!token) throw GenericError("Token invalid", 401);
   try {
-    const { email } = jwt.verify(token, process.env.JWT_SECRET);
+    const decodedToken = jwt.verify(
+      token,
+      process.env.JWT_SECRET!
+    ) as JWTPayload;
+    const { email } = decodedToken;
     //    const session = await prisma.session.findFirst({
     //      where: {
     //        token,

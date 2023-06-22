@@ -12,7 +12,7 @@ function Login(body: Body) {
   else if (email === "" || password === "")
     throw GenericError("incorrectly filled fields", 400);
 
-  const token = jwt.sign({email}, process.env.JWT_SECRET)
+  const token = jwt.sign({email}, process.env.JWT_SECRET!)
   //create session in db
   return token
 }
