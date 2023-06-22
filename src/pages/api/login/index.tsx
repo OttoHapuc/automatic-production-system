@@ -1,4 +1,4 @@
-import Method from "@/pages/utils/method";
+import Method from "@/server/utils/method";
 import { NextApiRequest, NextApiResponse } from "next";
 import { ErrorResponse } from "../../../server/error/index";
 import LoginService from "@/server/service/login";
