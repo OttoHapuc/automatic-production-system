@@ -31,7 +31,7 @@ export default function ButtonsAction({
     setStopShift(!stopShift);
   }
   function finishAction() {
-    if (!finishShift) setFinishShift(true);
+    if (!finishShift) return setFinishShift(true);
     if(finishShift && quantityProduced === "") return toast.error("Preencha a quantidade produzida")
     setChooseTeam("");
     setItemSelected("");
