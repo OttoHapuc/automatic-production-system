@@ -11,8 +11,8 @@ function Login(body: Body) {
   if (!body) throw GenericError("Body is Nessesary", 400);
   else if (email === "" || password === "")
     throw GenericError("incorrectly filled fields", 400);
-
-  const token = jwt.sign({email}, process.env.JWT_SECRET!)
+  // create get in db, email exist?
+  const token = jwt.sign({user_id:"id do user que vem do banco quando email válido e senha válida"}, process.env.JWT_SECRET!)
   //create session in db
   return token
 }

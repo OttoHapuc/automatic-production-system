@@ -7,11 +7,9 @@ export default async function Machines(
   res: NextApiResponse
 ) {
   const { headers } = req;
-  const { authorization } = headers;
-  const token = authorization?.split(" ")[1];
   try {
-    const message = await authorizationToken(token);
-    res.status(201).json({ message });
+    const user_id = await authorizationToken(headers);
+    res.status(201).json({ user_id });
   } catch (error: ErrorResponse | any) {
     return res.status(error.status).json({ message: error.message });
   }
