@@ -1,10 +1,13 @@
 import { ErrorResponse } from "@/server/error";
 import authorizationToken from "@/server/middlewares/authorizationToken";
+import validate from "@/server/middlewares/validateSchema";
+import { MachineSchema } from "@/server/schemas/machine-Schema";
 import { NextApiRequest, NextApiResponse } from "next";
 
 export default async function MachineContiinue(req:NextApiRequest,res:NextApiResponse){
     const { headers, body } = req;
   try {
+    validate(MachineSchema,body)
     const user_id = await authorizationToken(headers);
     res.status(201).json(`A maquina ${body.name} continua o processo`);
   } catch (error: ErrorResponse | any) {
