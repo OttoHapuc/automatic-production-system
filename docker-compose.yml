@@ -8,12 +8,14 @@ services:
     ports:
       - 3000:3000
     volumes:
-      - ./app:/app
+      - next-dev-vol:/app
 
   node:
     image: node:20.2.0
     volumes:
-      - ./app:/app
+      - next-dev-vol:/app
+    working_dir: /app
+    command: npm run test
 
 volumes:
   next-dev-vol:
