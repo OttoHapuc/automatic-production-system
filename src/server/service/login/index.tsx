@@ -1,12 +1,8 @@
 import GenericError from "@/server/error";
+import { SignInParams } from "@/utils/protocols";
 import jwt from 'jsonwebtoken'
 
-type Body = {
-  email: string;
-  password: string;
-};
-
-function Login(body: Body) {
+function Login(body: SignInParams) {
   const { email, password } = body;
   if (!body) throw GenericError("Body is Nessesary", 400);
   else if (email === "" || password === "")
