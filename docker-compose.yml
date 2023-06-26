@@ -12,10 +12,6 @@ services:
 
   node:
     image: node:20.2.0
-    volumes:
-      - next-dev-vol:/app
-    working_dir: /app
-    command: npm run test
 
 volumes:
   next-dev-vol:
