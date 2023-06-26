@@ -14,7 +14,6 @@ services:
     image: node:20.2.0
     volumes:
       - next-dev-vol:.
-    working_dir: .
 
 volumes:
   next-dev-vol:
