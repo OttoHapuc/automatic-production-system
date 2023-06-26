@@ -2,6 +2,14 @@
 version: "3"
 
 services:
+  postgres:
+    container_name: postgres
+    restart: always
+    ports:
+      - 5432:5432
+    env_file: 
+      - /.env.test
+
   app:
     image: docker-nextjs-dev
     build: .
@@ -9,3 +17,6 @@ services:
       - 3000:3000
     volumes:
       - next-dev-vol:/app
+
+volumes:
+  next-dev-vol:
