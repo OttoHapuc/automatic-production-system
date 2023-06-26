@@ -9,10 +9,11 @@ services:
       - 5432:5432
     env_file: 
       - /.env.test
+
   app:
     image: docker-nextjs-dev
     build: .
     ports:
       - 3000:3000
-  volumes:
-    - next-dev-vol: /app/*
+    volumes:
+      - next-dev-vol:/app
