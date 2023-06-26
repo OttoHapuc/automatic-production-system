@@ -1,21 +1,21 @@
-name: Pull Request on Github
-on: [pull_request]
+name: Tests CI
+
+on: push
+
 jobs:
-  PullRequest-GitHub:
+  test:
     runs-on: ubuntu-latest
     steps:
-      - name: Check out repository code
-        uses: actions/checkout@v3
-      - name: Make a new envfile
-        uses: SpicyPizza/create-envfile@v1.3.1
+      - uses: actions/checkout@v2
+      - name: Test using Node.js
+        uses: actions/setup-node@v1
         with:
-          envkey_POSTGRES_USER: "postgres"
-          envkey_POSTGRES_PASSWORD: "postgres"
-          envkey_POSTGRES_HOST: "localhost"
-          envKey_POSTGRES_PORT: 5432
-          envkey_POSTGRES_DB: "TesT"
-          envkey_DATABASE_URL: "postgresql://postgres:postgres@postgres:5432/TesT"
-          directory: ./
-          file_name: .env.test
-      - name: Run tests
-        run: docker-compose -f docker-compose.yml run node npm run test
+          node-version: '20.2.0'
+      - name: Install yarn
+        run: npm install -g yarn
+      - name: Install Dependencies
+        run: yarn install
+      - name: Run JS Linter
+        run: yarn lint
+      - name: Run JS Tests
+        run: yarn test
