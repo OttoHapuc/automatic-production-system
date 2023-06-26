@@ -1,6 +1,6 @@
 FROM node:20.2.0
 
-WORKDIR /app
+WORKDIR /usr/src
 
 COPY . .
 
