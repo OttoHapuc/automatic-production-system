@@ -8,13 +8,13 @@ services:
     ports:
       - 3000:3000
     volumes:
-      - next-dev-vol:/app
+      - next-dev-vol:.
 
   node:
     image: node:20.2.0
     volumes:
-      - next-dev-vol:/app
-    working_dir: /app
+      - next-dev-vol:.
+    working_dir: .
 
 volumes:
-  next-dev-vol: /app
+  next-dev-vol:
