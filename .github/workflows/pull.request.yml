@@ -14,8 +14,8 @@ jobs:
           envkey_POSTGRES_HOST: "localhost"
           envKey_POSTGRES_PORT: 5432
           envkey_POSTGRES_DB: "TesT"
-          envkey_DATABASE_URL: "postgresql://${POSTGRES_USER}:${envkey_POSTGRES_PASSWORD}@${POSTGRES_HOST}:${POSTGRES_PORT}/${POSTGRES_DB}?schema=public"
-          directory: back-end
+          envkey_DATABASE_URL: "postgresql://postgres:postgres@postgres:5432/TesT"
+          directory: ./
           file_name: .env.test
       - name: Run tests
         run: docker-compose -f docker-compose.yml run node npm run test
