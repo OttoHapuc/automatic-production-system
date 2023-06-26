@@ -10,11 +10,5 @@ services:
     volumes:
       - next-dev-vol:/app
 
-  node:
-    image: node:20.2.0
-    volumes:
-      - .:/app
-    working_dir: /app
-
 volumes:
   next-dev-vol:

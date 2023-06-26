@@ -4,9 +4,9 @@ WORKDIR /app
 
 COPY . .
 
-EXPOSE 5606
+EXPOSE 3000
 
-RUN npm i
+RUN npm install
 
 RUN npm run build
 
