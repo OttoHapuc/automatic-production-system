@@ -4,16 +4,10 @@ version: "3"
 services:
   app:
     image: docker-nextjs-dev
-    build: .
+    build: 
+      context: .
+      dockerfile: Dockerfile
     ports:
       - 3000:3000
     volumes:
-      - next-dev-vol:/app
-
-  node:
-    image: node:20.2.0
-    volumes:
-      - next-dev-vol:/app
-
-volumes:
-  next-dev-vol:
+      - .:/app
