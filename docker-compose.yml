@@ -17,4 +17,4 @@ services:
     working_dir: /app
 
 volumes:
-  next-dev-vol:
+  next-dev-vol: /app
