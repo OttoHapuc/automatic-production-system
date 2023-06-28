@@ -26,7 +26,7 @@ export default function DoughnutChart() {
     ],
   };
   return (
-    <div className="h-60 w-80 p-3 flex justify-center items-center p-1 shadow-md shadow-gray-600 rounded-full">
+    <div className="h-60 w-80 p-3 flex justify-center items-center shadow-md shadow-gray-600 rounded-full mb-2">
       <Doughnut data={data} />
     </div>
   );
