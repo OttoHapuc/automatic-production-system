@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 export const metadata = {
   title: "ConectaAB",
   description: "Sessão inicial",
@@ -25,7 +27,9 @@ export default function ConectaAB() {
             especial à querida dona Sirley Pedrosa Auricchio, que sempre será
             lembrada pelo seu legado de amor e dedicação à família.
           </p>
-          <img
+          <Image
+            width={500}
+            height={500}
             className="w-72"
             src="https://img.freepik.com/vetores-gratis/cartao-de-dia-das-maes-com-flores-desabrochando-e-borboletas_1017-38256.jpg?w=740&t=st=1687958170~exp=1687958770~hmac=4cf1854366f34737134804bad5d53a5fb5d5e05b4a4d2e2c8eaaf5d93a2b1cf2"
             alt=""
@@ -67,9 +71,17 @@ export default function ConectaAB() {
           Energia Solar Flutuante: Aproveitando o Potencial de Cavas Exauridas
           de Mineração
         </h2>
-        <img className="m-auto" src="https://i.imgur.com/wW6rV1W.png" alt="" />
+        <Image
+          width={500}
+          height={500}
+          className="m-auto"
+          src="https://i.imgur.com/wW6rV1W.png"
+          alt=""
+        />
         <div className="flex flex-wrap justify-around items-center">
-          <img
+          <Image
+            width={500}
+            height={500}
             className="w-72"
             src="https://img.freepik.com/fotos-gratis/conceito-de-reciclagem-ecologica_23-2148737654.jpg?w=740&t=st=1687958487~exp=1687959087~hmac=3fb61e9d0f319e35db68dc1176401322d9ca966a86daca0a90df4b4a7c786d46"
             alt=""
@@ -98,15 +110,33 @@ export default function ConectaAB() {
             o avanço tecnológico no setor energético.
           </p>
         </div>
-        <img className="w-full" src="https://i.imgur.com/wdyJyr1.png" alt="" />
+        <Image
+          width={500}
+          height={500}
+          className="w-4/5 m-auto"
+          src="https://i.imgur.com/wdyJyr1.png"
+          alt=""
+        />
         <br />
       </div>
       <div className="text-base space-y-4">
-        <img className="m-auto" src="https://i.imgur.com/T90IwtB.png" alt="" />
+        <Image
+          width={500}
+          height={500}
+          className="m-auto"
+          src="https://i.imgur.com/T90IwtB.png"
+          alt=""
+        />
         <h2 className="text-xl font-bold">
           Vem aí o Leilão Sapucaia & FF & Convidados
         </h2>
-        <img className="m-auto" src="https://i.imgur.com/kf6rrmF.png" alt="" />
+        <Image
+          width={500}
+          height={500}
+          className="m-auto"
+          src="https://i.imgur.com/kf6rrmF.png"
+          alt=""
+        />
         <p>
           A 4° Edição do renomado Leilão Sapucaia & FF & Convidados vem aí! O
           evento promete apresentar animais de extrema qualidade e performance,
