@@ -3,6 +3,11 @@ import "./globals.css";
 import { UserDataProvider } from "@/context/userContext";
 import 'react-toastify/dist/ReactToastify.css';
 
+export const metadata = {
+  title: "AB",
+  description: "Sessão inicial",
+};
+
 export default function RootLayout({
   children,
 }: {
