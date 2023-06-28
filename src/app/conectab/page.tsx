@@ -70,7 +70,7 @@ export default function ConectaAB() {
         <img className="m-auto" src="https://i.imgur.com/wW6rV1W.png" alt="" />
         <div className="flex flex-wrap justify-around items-center">
           <img
-          className="w-72"
+            className="w-72"
             src="https://img.freepik.com/fotos-gratis/conceito-de-reciclagem-ecologica_23-2148737654.jpg?w=740&t=st=1687958487~exp=1687959087~hmac=3fb61e9d0f319e35db68dc1176401322d9ca966a86daca0a90df4b4a7c786d46"
             alt=""
           />
