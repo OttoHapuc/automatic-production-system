@@ -90,7 +90,7 @@ export default function ConectaAB() {
             A AB areias, por meio do Grupo AB Sol Energias Renováveis, está
             investindo em projetos de geração de energia solar flutuante. Essa
             tecnologia consiste na instalação de painéis solares sobre corpos
-            d'água, como represas, lagos e antigas cavas exauridas de mineração.
+            d&apos;água, como represas, lagos e antigas cavas exauridas de mineração.
             O Brasil possui condições favoráveis para esse tipo de geração de
             energia, com altos índices de incidência solar e extensas áreas de
             superfície de água.
